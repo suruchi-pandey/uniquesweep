@@ -1,161 +1,175 @@
 
-import { useState } from "react";
 import "./App.css";
+
+const games = [
+  { name: "Milkyway", url: "https://milkywayapp.xyz/", emoji: "🌌" },
+  { name: "Juwa", url: "https://dl.juwa777.com/", emoji: "👑" },
+  { name: "Juwa 2.0", url: "https://m.juwa2.com/", emoji: "✨" },
+  { name: "Gamevault", url: "https://download.gamevault999.com/", emoji: "🔐" },
+  { name: "Orionstar", url: "http://start.orionstars.vip:8580/index.html", emoji: "⭐" },
+  { name: "Game Room", url: "https://www.gameroom777.com/", emoji: "🕹️" },
+  { name: "Vesgasweep", url: "http://m.lasvegassweeps.com/", emoji: "🎰" },
+  { name: "Vblink", url: "http://www.vblink777.club/", emoji: "💎" },
+  { name: "Firekirin", url: "https://firekirin.com/", emoji: "🐉" },
+  { name: "Panda Master", url: "https://pandamaster.vip:8888/index.html", emoji: "🐼" },
+];
 
 const brands = [
   {
     name: "Universal Play Network",
-    initials: "UP",
-    facebook: "https://www.facebook.com/profile.php?id=61580350351730",
+    url: "https://www.facebook.com/profile.php?id=61580350351730",
   },
   {
     name: "Hazel Gaming",
-    initials: "HG",
-    facebook: "https://www.facebook.com/profile.php?id=100077284421726",
+    url: "https://www.facebook.com/profile.php?id=100077284421726",
   },
   {
     name: "Winvibe Playroom",
-    initials: "WP",
-    facebook: "https://www.facebook.com/profile.php?id=61595038727413",
+    url: "https://www.facebook.com/profile.php?id=61595038727413",
   },
   {
     name: "Royal Hub",
-    initials: "RH",
-    facebook: "https://www.facebook.com/profile.php?id=61587514530322",
+    url: "https://www.facebook.com/profile.php?id=61587514530322",
   },
 ];
 
-const games = [
-  { name: "Milkyway", icon: "🌌", url: "https://milkywayapp.xyz/" },
-  { name: "Juwa", icon: "🎮", url: "https://dl.juwa777.com/" },
-  { name: "Juwa 2.0", icon: "✨", url: "https://m.juwa2.com/" },
-  { name: "Gamevault", icon: "🔐", url: "https://download.gamevault999.com/" },
-  { name: "Orionstar", icon: "🌠", url: "http://start.orionstars.vip:8580/index.html" },
-  { name: "Game Room", icon: "🕹️", url: "https://www.gameroom777.com/" },
-  { name: "Vesgasweep", icon: "🎰", url: "http://m.lasvegassweeps.com/" },
-  { name: "Vblink", icon: "💎", url: "http://www.vblink777.club/" },
-  { name: "Firekirin", icon: "🔥", url: "https://firekirin.com/" },
-  { name: "Panda Master", icon: "🐼", url: "https://pandamaster.vip:8888/index.html" },
-];
-
 function App() {
-  const [selectedBrand, setSelectedBrand] = useState(null);
-  const brand = brands.find((item) => item.name === selectedBrand);
-
   return (
-    <main className="site">
-      <header className="topbar">
-        <button
-          className="logo"
-          onClick={() => setSelectedBrand(null)}
-          aria-label="Return to UniqueSweep home"
-        >
-          <span className="logo-icon">U</span>
-          <span>UNIQUE<span className="purple">SWEEP</span></span>
-        </button>
-        <span className="status">
-          <span className="status-dot" /> GAME DIRECTORY
-        </span>
+    <main className="page">
+      <header className="hero">
+        <div className="logo-mark">
+          <span className="crown">♛</span>
+          <span>US</span>
+        </div>
+
+        <p className="eyebrow">WELCOME TO</p>
+        <h1>Unique<span>Sweep</span></h1>
+        <p className="hero-subtitle">
+          Your favorite games, all in one place.
+        </p>
+
+        <div className="trust-quote">
+          <span className="quote-mark">“</span>
+          <p>Your choice. Your experience. Your game time.</p>
+          <span className="quote-caption">
+            Explore your favorite games in one convenient place.
+          </span>
+        </div>
       </header>
 
-      <section className="hero">
-        <div className="eyebrow">YOUR GAMES, ALL IN ONE PLACE</div>
-        <h1>Find Your <span className="gradient">Game Zone.</span></h1>
-        <p>Choose your community to explore its available game platforms.</p>
+      <section className="games-section">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">YOUR GAME DIRECTORY</p>
+            <h2>Choose Your Game</h2>
+          </div>
+          <span className="game-count">🎮 10 games</span>
+        </div>
+
+        <div className="games-grid">
+          {games.map((game) => (
+            <a
+              className="game-card"
+              href={game.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={game.name}
+            >
+              <div className="game-art">
+                <span className="game-icon">{game.emoji}</span>
+              </div>
+              <span className="game-name">{game.name}</span>
+              <span className="open-game">
+                Open Game <span>→</span>
+              </span>
+            </a>
+          ))}
+        </div>
       </section>
 
-      {!brand ? (
-        <section className="content">
-          <div className="section-heading">
-            <div>
-              <h2>Choose Your Brand</h2>
-              <p>Select the community you want to visit.</p>
-            </div>
-            <span className="count">04 BRANDS</span>
+      <section className="facebook-section">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">STAY CONNECTED</p>
+            <h2>Connect With Us</h2>
+            <p className="section-description">
+              Find your brand on Facebook.
+            </p>
+          </div>
+        </div>
+
+        <div className="brands-list">
+          {brands.map((brand) => (
+            <a
+              className="brand-card"
+              href={brand.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={brand.name}
+            >
+              <span className="facebook-icon">f</span>
+              <span className="brand-name">{brand.name}</span>
+              <span className="brand-arrow">›</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section className="payments-section">
+        <p className="eyebrow">CONVENIENT PAYMENT OPTIONS</p>
+        <h2>Payment Methods</h2>
+        <p className="payment-description">
+          Available payment methods may vary by gaming platform.
+        </p>
+
+        <div className="payment-grid">
+          <div className="payment-badge chime">
+            <span className="payment-symbol">✳</span>
+            <span>Chime</span>
           </div>
 
-          <div className="brand-grid">
-            {brands.map((item, index) => (
-              <button
-                className="brand-card"
-                key={item.name}
-                onClick={() => setSelectedBrand(item.name)}
-              >
-                <span className={`brand-symbol symbol-${index}`}>
-                  {item.initials}
-                </span>
-                <span className="brand-name">{item.name}</span>
-                <span className="brand-action">
-                  Explore platforms <span>↗</span>
-                </span>
-              </button>
-            ))}
-          </div>
-        </section>
-      ) : (
-        <section className="content">
-          <button
-            className="back-button"
-            onClick={() => setSelectedBrand(null)}
-          >
-            ← All brands
-          </button>
-
-          <div className="selected-brand">
-            <div className="selected-icon">{brand.initials}</div>
-            <div>
-              <div className="eyebrow">WELCOME TO</div>
-              <h2>{brand.name}</h2>
-              <p>Choose a platform below to continue.</p>
-            </div>
+          <div className="payment-badge cashapp">
+            <span className="payment-symbol">$</span>
+            <span>Cash App</span>
           </div>
 
-          <div className="section-heading">
-            <div>
-              <h2>Game Platforms</h2>
-              <p>Select a card to open its external website.</p>
-            </div>
-            <span className="count">10 PLATFORMS</span>
+          <div className="payment-badge venmo">
+            <span className="payment-symbol">V</span>
+            <span>Venmo</span>
           </div>
 
-          <div className="game-grid">
-            {games.map((game, index) => (
-              <a
-                className="game-card"
-                href={game.url}
-                key={game.name}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className={`game-icon game-${index}`}>{game.icon}</span>
-                <span className="game-info">
-                  <strong>{game.name}</strong>
-                  <small>Open platform ↗</small>
-                </span>
-                <span className="arrow">↗</span>
-              </a>
-            ))}
+          <div className="payment-badge paypay">
+            <span className="payment-symbol">P</span>
+            <span>PayPal</span>
           </div>
 
-          <a
-            className="contact-button"
-            href={brand.facebook}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className="facebook-mark">f</span>
-            Visit {brand.name} on Facebook ↗
-          </a>
-        </section>
-      )}
+          <div className="payment-badge applepay">
+            <span className="payment-symbol">●</span>
+            <span>Apple Pay</span>
+          </div>
 
-      <footer>
-        <button className="footer-logo" onClick={() => setSelectedBrand(null)}>
-          UNIQUESWEEP
-        </button>
-        <p>One directory. Four communities.</p>
+          <div className="payment-badge googlepay">
+            <span className="payment-symbol">G</span>
+            <span>Google Pay</span>
+          </div>
+
+          <div className="payment-badge cards">
+            <span className="payment-symbol">▤</span>
+            <span>Debit / Credit Cards</span>
+          </div>
+        </div>
+      </section>
+
+
+      <footer className="footer">
+        <div className="footer-brand">
+          <span className="footer-logo">US</span>
+          <strong>Unique<span>Sweep</span></strong>
+        </div>
+        <span>One place for your favorite game links.</span>
         <small>
-          External platforms are operated by their respective providers.
+          Game links lead to external websites. Please use them responsibly
+          and check each platform's terms and local laws.
         </small>
       </footer>
     </main>
