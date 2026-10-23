@@ -1,0 +1,479 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Inter', sans-serif;
+  color: #f7f5ff;
+  background: #0b0912;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% 0%, #271044 0%, transparent 42%),
+    #0b0912;
+}
+
+button, a {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site {
+  max-width: 1120px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.topbar {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid #ffffff12;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.logo-icon {
+  display: grid;
+  place-items: center;
+  width: 37px;
+  height: 37px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #a855f7, #6235db);
+  box-shadow: 0 0 24px #8b5cf650;
+  font-size: 23px;
+}
+
+.purple {
+  color: #bf91ff;
+}
+
+.status, .count {
+  color: #bba8d5;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #a78bfa;
+  box-shadow: 0 0 10px #a78bfa;
+}
+
+.hero {
+  text-align: center;
+  padding: 76px 0 62px;
+}
+
+.eyebrow {
+  color: #bc91ff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 17px 0;
+  font-size: clamp(36px, 6vw, 62px);
+  line-height: 1.12;
+  letter-spacing: -2.5px;
+}
+
+.gradient {
+  color: #c5a0ff;
+  background: linear-gradient(90deg, #c4a1ff, #8e7bff, #f0a8ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p, .section-heading p, .selected-brand p {
+  color: #a59bb5;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.content {
+  padding-bottom: 70px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.section-heading h2, .selected-brand h2 {
+  margin: 0;
+  font-size: 21px;
+  letter-spacing: -0.6px;
+}
+
+.section-heading p, .selected-brand p {
+  margin: 7px 0 0;
+}
+
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.brand-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 180px;
+  padding: 22px;
+  text-align: left;
+  border: 1px solid #ffffff13;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #1b1528, #110e19);
+  cursor: pointer;
+  transition: border-color .2s, transform .2s;
+}
+
+.brand-card:hover, .game-card:hover {
+  border-color: #a879f7a0;
+  transform: translateY(-3px);
+}
+
+.brand-symbol, .selected-icon {
+  display: grid;
+  place-items: center;
+  width: 47px;
+  height: 47px;
+  margin-bottom: 22px;
+  border-radius: 14px;
+  background: #322044;
+  color: #d5b5ff;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.symbol-1 {
+  background: #23372f;
+  color: #a8f2c9;
+}
+
+.symbol-2 {
+  background: #3b233b;
+  color: #ffb9ed;
+}
+
+.symbol-3 {
+  background: #3b321d;
+  color: #ffdf9b;
+}
+
+.brand-name {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.brand-action {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 13px;
+  color: #b7a1d1;
+  font-size: 11px;
+}
+
+.brand-action span {
+  color: #c6a0ff;
+}
+
+.back-button {
+  padding: 10px 0;
+  margin-bottom: 25px;
+  border: 0;
+  background: transparent;
+  color: #c8aaff;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.selected-brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 24px;
+  margin-bottom: 36px;
+  border: 1px solid #a879f733;
+  border-radius: 18px;
+  background: linear-gradient(110deg, #241635, #15101e);
+}
+
+.selected-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  margin: 0;
+  font-size: 20px;
+}
+
+.selected-brand h2 {
+  margin-top: 8px;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.game-card {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #ffffff12;
+  border-radius: 15px;
+  background: #15111f;
+  transition: border-color .2s, transform .2s;
+}
+
+.game-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 47px;
+  height: 47px;
+  border-radius: 13px;
+  background: #302044;
+  font-size: 23px;
+}
+
+.game-1, .game-6 {
+  background: #3c2336;
+}
+
+.game-2, .game-7 {
+  background: #222c49;
+}
+
+.game-3, .game-8 {
+  background: #3a2c1c;
+}
+
+.game-4, .game-9 {
+  background: #233b32;
+}
+
+.game-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.game-info strong {
+  overflow-wrap: anywhere;
+  font-size: 13px;
+}
+
+.game-info small {
+  color: #988ba9;
+  font-size: 10px;
+}
+
+.arrow {
+  margin-left: auto;
+  color: #bba0ed;
+  font-size: 17px;
+}
+
+.contact-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 26px;
+  padding: 17px;
+  border-radius: 13px;
+  background: linear-gradient(90deg, #7540cf, #9253e8);
+  box-shadow: 0 8px 30px #7c3aed20;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.facebook-mark {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: white;
+  color: #7540cf;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+footer {
+  padding: 27px 0 32px;
+  text-align: center;
+  border-top: 1px solid #ffffff12;
+}
+
+.footer-logo {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+footer p, footer small {
+  color: #8f839f;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+footer small {
+  font-size: 10px;
+}
+
+@media (max-width: 600px) {
+  .site {
+    padding: 0 16px;
+  }
+
+  .topbar {
+    min-height: 70px;
+  }
+
+  .logo {
+    font-size: 13px;
+  }
+
+  .status {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .hero {
+    padding: 60px 0 43px;
+  }
+
+  .hero h1 {
+    letter-spacing: -1.5px;
+  }
+
+  .hero p {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .brand-grid {
+    gap: 10px;
+  }
+
+  .brand-card {
+    min-height: 160px;
+    padding: 15px;
+  }
+
+  .brand-name {
+    font-size: 12px;
+  }
+
+  .brand-action {
+    font-size: 10px;
+  }
+
+  .section-heading h2, .selected-brand h2 {
+    font-size: 18px;
+  }
+
+  .count {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .game-grid {
+    gap: 9px;
+  }
+
+  .game-card {
+    gap: 9px;
+    padding: 11px 9px;
+  }
+
+  .game-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 19px;
+  }
+
+  .game-info strong {
+    font-size: 11px;
+  }
+
+  .game-info small {
+    font-size: 9px;
+  }
+
+  .arrow {
+    font-size: 13px;
+  }
+
+  .selected-brand {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .selected-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+  }
+}
